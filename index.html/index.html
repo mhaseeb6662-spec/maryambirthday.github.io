@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Maryam</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background: #ffdde1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+    }
+
+    #card {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        width: 320px;
+        animation: fade 0.8s ease;
+    }
+
+    h1 {
+        color: #ff4b5c;
+        font-size: 22px;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 15px;
+        margin-top: 15px;
+        display: none;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px 25px;
+        background: #ff4b5c;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #e03445;
+    }
+
+    @keyframes fade {
+        from {opacity: 0; transform: scale(0.9);}
+        to {opacity: 1; transform: scale(1);}
+    }
+</style>
+</head>
+
+<body>
+
+<div id="card">
+    <h1 id="text">🎉 Happy Birthday Maryam 🎉<br>22 November 2025</h1>
+    <img id="image">
+    <button id="nextBtn">Next</button>
+</div>
+
+<script>
+let step = 0;
+
+document.getElementById("nextBtn").addEventListener("click", function() {
+    step++;
+
+    if (step === 1) {
+        // Show Maryam's picture
+        document.getElementById("text").innerText = "💗 My Favourite Person 💗";
+        document.getElementById("image").style.display = "block";
+        document.getElementById("image").src = "maryam.jpg"; // Replace with Maryam's picture URL
+    }
+    else if (step === 2) {
+        // Show cake picture
+        document.getElementById("text").innerText = "🎂 Birthday Cake 🎂";
+        document.getElementById("image").src = "30.jpg"; // Replace with cake picture URL
+        document.getElementById("nextBtn").innerText = "Next";
+    }
+    else if (step === 3) {
+        // Show final message
+        document.getElementById("text").innerText = "❤️ I Hope Your Day Is Super Special ❤️";
+        document.getElementById("image").style.display = "block";
+        document.getElementById("image").src = "31.jpg"; // Optional: show Maryam again or another pic
+        document.getElementById("nextBtn").style.display = "none";
+    }
+});
+</script>
+
+</body>
+</html>
